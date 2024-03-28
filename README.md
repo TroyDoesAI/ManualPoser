@@ -1,13 +1,13 @@
 # Demo Code for "Talking Head(?) Anime from A Single Image 3: Now the Body Too"
 
-This repository contains demo programs for the [Talking Head(?) Anime from a Single Image 3: Now the Body Too](https://pkhungurn.github.io/talking-head-anime-3/index.html) project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:
+This repository contains demo programs as the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:
 
 * The ``manual_poser`` lets you manipulate a character's facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface. 
 * ``ifacialmocap_puppeteer`` lets you transfer your facial motion to an anime character.
 
 ## Try the Manual Poser on Google Colab
 
-If you do not have the required hardware (discussed below) or do not want to download the code and set up an environment to run it, click [![this link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pkhungurn/talking-head-anime-3-demo/blob/master/colab.ipynb) to try running the manual poser on [Google Colab](https://research.google.com/colaboratory/faq.html).
+If you do not have the required hardware (discussed below) or do not want to download the code and set up an environment to run it, click [![this link](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/Troys-Code/ManualPoser/blob/main/colab.ipynb) to try running the manual poser on [Google Colab](https://research.google.com/colaboratory/faq.html).
 
 ## Hardware Requirements
 
@@ -148,7 +148,7 @@ if you have not already activated the environment.
 
 ### Choosing System Variant to Use
 
-As noted in the [project's write-up](http://pkhungurn.github.io/talking-head-anime-3/index.html), I created 4 variants of the neural network system. They are called ``standard_float``, ``separable_float``, ``standard_half``, and ``separable_half``. All of them have the same functionalities, but they differ in their sizes, RAM usage, speed, and accuracy. You can specify which variant that the ``manual_poser`` program uses through the ``--model`` command line option.
+I created 4 variants of the neural network system. They are called ``standard_float``, ``separable_float``, ``standard_half``, and ``separable_half``. All of them have the same functionalities, but they differ in their sizes, RAM usage, speed, and accuracy. You can specify which variant that the ``manual_poser`` program uses through the ``--model`` command line option.
 
 ```
 > python tha3/app/manual_poser --model <variant_name>
@@ -207,33 +207,3 @@ In order for the system to work well, the input image must obey the following co
 * The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.
 
 ![An example of an image that conforms to the above criteria](docs/input_spec.png "An example of an image that conforms to the above criteria")
-
-See the project's [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec) for more details on the input image.
-
-## Citation
-
-If your academic work benefits from the code in this repository, please cite the project's web page as follows:
-
-> Pramook Khungurn. **Talking Head(?) Anime from a Single Image 3: Now the Body Too.** http://pkhungurn.github.io/talking-head-anime-3/, 2022. Accessed: YYYY-MM-DD.
-
-You can also used the following BibTex entry:
-
-```
-@misc{Khungurn:2022,
-    author = {Pramook Khungurn},
-    title = {Talking Head(?) Anime from a Single Image 3: Now the Body Too},
-    howpublished = {\url{http://pkhungurn.github.io/talking-head-anime-3/}},
-    year = 2022,
-    note = {Accessed: YYYY-MM-DD},
-}
-```
-
-## Disclaimer
-
-While the author is an employee of [Google Japan](https://careers.google.com/locations/tokyo/), this software is not Google's product and is not supported by Google.
-
-The copyright of this software belongs to me as I have requested it using the [IARC process](https://opensource.google/documentation/reference/releasing#iarc). However, Google might claim the rights to the intellectual
-property of this invention.
-
-The code is released under the [MIT license](https://github.com/pkhungurn/talking-head-anime-2-demo/blob/master/LICENSE).
-The model is released under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode). Please see the README.md file in the ``data/images`` directory for the licenses for the images there.
